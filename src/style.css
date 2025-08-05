@@ -29,6 +29,7 @@ header {
 }
 body {
   background-color: rgb(165, 134, 134);
+  font-family: "Red Hat Display", sans-serif;
 }
 .weather-app {
   background: white;
