@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,14 +31,17 @@
       <main>
         <div class="weather-app-main">
           <div class="weather-app-data">
-            <h1 class="city" id="city">Brisbane</h1>
-            <p>
+            <h1 class="city" id="city">my city</h1>
+            <p class="weather-app-details">
               Tuesday 14:49, scattered clouds
               <br />
               Humidity: <strong>66%</strong>, Wind: <strong>3.13km/h</strong>
             </p>
-          </div>
-          <div class="weather-app-temperature">🌤️ 12°C</div>
+          <div class="weather-app-temperature-container">
+          <div class="weather-app-icon">🌤️</div>
+          <div class="weather-app-temperature" id="temperature">-</div>
+           <div class="weather-app-unit">°C</div>
+         </div>
         </div>
       </main>
 
