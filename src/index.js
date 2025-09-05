@@ -51,7 +51,31 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+function displayForecast() {
+  let days = ["Tues", "Wed", "Thurs", "Fri", "Sat"];
+  let forecastHTML = "";
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="weather-forecast-day">
+          <div class ="weather-forecast-date">${day}</div>
+            <div class="forecast-icon">🌤️</div>
+            <div class="forecast-temps">
+              <div class="forecast-temp">
+                <strong>20°C</strong>
+              </div>
+              <div class="forecast-temp"> 10°C
+              </div>
+            </div>`;
+  });
+  let forecastElement = document.querySelector("#forecast");
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Bunbury");
+displayForecast();
