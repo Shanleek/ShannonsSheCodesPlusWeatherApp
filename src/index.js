@@ -16,6 +16,8 @@ function refreshWeather(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+
+  getForecast(response.data.city);
 }
 function formatDate(date) {
   let minutes = date.getMinutes();
@@ -51,7 +53,15 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+function getForecast(city) {
+  let apiKey = "afaa81335fo0e0a3b010cf4b34f66tb4";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}}&key=${apikey}&units=metric`;
+  axios.get(apiURL).then(displayForecast);
+}
+
 function displayForecast() {
+  console.log(response.data);
+
   let days = ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   let forecastHTML = "";
   days.forEach(function (day) {
@@ -63,7 +73,7 @@ function displayForecast() {
             <div class="forecast-icon">🌤️</div>
             <div class="forecast-temps">
               <div class="forecast-temp">
-                <strong>20°C  </strong>
+                <strong>20°C</strong>
               </div>
               <div class="forecast-temp"> 10°C
               </div>
@@ -79,4 +89,4 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Bunbury");
-displayForecast();
+displayForecast("Bunbury");
