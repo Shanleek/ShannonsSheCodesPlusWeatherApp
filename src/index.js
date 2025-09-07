@@ -52,7 +52,7 @@ function handleSearchSubmit(event) {
 }
 
 function displayForecast() {
-  let days = ["Tues", "Wed", "Thurs", "Fri", "Sat"];
+  let days = ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   let forecastHTML = "";
   days.forEach(function (day) {
     forecastHTML =
@@ -63,10 +63,11 @@ function displayForecast() {
             <div class="forecast-icon">🌤️</div>
             <div class="forecast-temps">
               <div class="forecast-temp">
-                <strong>20°C</strong>
+                <strong>20°C  </strong>
               </div>
               <div class="forecast-temp"> 10°C
               </div>
+            </div>
             </div>`;
   });
   let forecastElement = document.querySelector("#forecast");
