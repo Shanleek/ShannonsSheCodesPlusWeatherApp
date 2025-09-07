@@ -73,6 +73,7 @@ function getForecast(city) {
   axios.get(apiURL).then(displayForecast);
 }
 
+function displayForecast(response) {
   console.log(response.data);
 
   let forecastHTML = "";
